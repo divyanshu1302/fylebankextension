@@ -1,10 +1,9 @@
-# from werkzeug.security import check_password_hash, generate_password_hash
 from bank_manager.models import BANK_COLLECTION
-# from flask_login import UserMixin
+
 
 class Reading():
 
-    def __init__(self, data,db=False):
+    def __init__(self, data, db=False):
         self.ifsc = data.get('ifsc')
         self.bank_id = data.get('bank_id')
         self.branch = data.get('branch')
