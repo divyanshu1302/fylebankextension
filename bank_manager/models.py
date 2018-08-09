@@ -1,7 +1,7 @@
 import os
 from pymongo import MongoClient
 
-from application import app
+from bank_manager.application import app
 
 DATABASE_URI = 'mongodb://fyle:fyle123@ds117422.mlab.com:17422/fylebank'
 
