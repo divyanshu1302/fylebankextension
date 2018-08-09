@@ -1,1 +1,1 @@
-web: gunicorn bank_manager:app
+web: gunicorn runserver:app
