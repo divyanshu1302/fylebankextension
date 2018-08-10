@@ -1,7 +1,7 @@
 import csv
 import json
 
-from flask import abort, jsonify, request
+from flask import abort, jsonify, request, make_response
 
 from bank_manager.application import app
 from bank_manager.createdata import Reading
@@ -10,7 +10,12 @@ from bank_manager.models import BANK_COLLECTION, db
 
 @app.route('/')
 def index():
-    return '<h1>Welcome to Fyle Bank Manager</h1>'
+    return '<h1>Welcome to Fyle Bank Manager</h1> Api format: /fetchdetails?ifsc=A12345I8 or /fetchdetails?bankname=ALLAHABAD BANK&city=RAE BARELI'
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return make_response(jsonify({'error': 'Not Found'}), 404)
 
 
 @app.route('/create_data/', methods=["GET", "POST"])
@@ -54,6 +59,10 @@ def fetchdetails():
                 res['status'] = "success"
                 res['message'] = "Suceesfully Extracted"
 
+                if not data:
+                        res['message'] = "No data is available according to provided inputs"
+                else:
+                        res['message'] = "Suceesfully Extracted"
         except Exception as exc:
                 res['status'] = "error"
                 res['message'] = exc.message
