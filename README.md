@@ -1,4 +1,4 @@
-# Twitter Stream Filter API(TweetBot)
+# Fyle Bank Manager
 
 APIs is been created to retrieve data based on applied filters. It is two types-
 1. Filter to extract bank details based on ifsc code
