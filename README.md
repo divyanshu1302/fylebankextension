@@ -34,4 +34,4 @@ RESULT - `{`
     `"status":"success"`
     `}`
 
-PRODUCTION - https://fylebankmanager.herokuapp.com/ deplyed on heroku and filter format is ame as above
+PRODUCTION - https://fylebankmanager.herokuapp.com/ deplyed on heroku and filter format is same as above
