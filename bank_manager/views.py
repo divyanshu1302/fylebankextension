@@ -20,7 +20,6 @@ def not_found(error):
 
 @app.route('/create_data/', methods=["GET", "POST"])
 def create_data():
-
     csvfile = open("bank_branches.csv", 'r')
     fieldnames = ("ifsc", "bank_id", "branch", "address", "city", "district", "state", "bank_name")
     reader = csv.DictReader(csvfile, fieldnames)
@@ -30,7 +29,7 @@ def create_data():
     return jsonify({"status": "done"})
 
 
-@app.route('/fetchdetails')
+@app.route('/fetchdetails', methods=["GET", "POST"])
 def fetchdetails():
         res = dict()
         ifsc_code = request.args.get('ifsc')
